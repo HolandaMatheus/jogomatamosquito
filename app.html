@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Jogo Mata Mosquito</title>
+		<meta charset="utf-8">
+
+		<!--Chamando a classe com o JS -->
+		<script src="jogo.js"></script>
+
+		<!--Chamando os efeitos e imagens  (CSS)-->
+		<link rel="stylesheet" href="estilo.css">
+	</head>
+
+	<!--Chamando a função para saber o tamanho da tela dentro do body. Por estar dentro do Body, qualquer alteração no tamanho da tela, chama a função --> 
+	<body onresize="ajustaTelaJogo()">
+
+		<div class="painel">
+			<div class="vidas">
+				<img id="v1" src="imagens/coracao_cheio.png">
+				<img id="v2" src="imagens/coracao_cheio.png">
+				<img id="v3" src="imagens/coracao_cheio.png">
+			</div>
+
+			<div class="cronometro">Tempo restante: <span id="cronometro"></span></div>
+		</div>
+
+		<!--Fazendo a chamada da imagem e a classe que modifica o tamanho da mesma-->
+		<!--
+		<img src="imagens/mosca.png" class="mosquito1">
+		-->
+
+		<!--Chamando uma função após a leitura do Browser. // O a função pode ser chamada dentro do BODY com o <SCRIPT>, pois o mesmo já foi definido no HEAD com o caminho SRC que esta apontando onde a/as funcão(ções) estão contidas-->
+		<script>
+			document.getElementById('cronometro').innerHTML = tempo
+
+			var criaMosquito = setInterval(function(){
+				posicaoRandomica()
+			}, criaMosquitoTempo)	
+		</script>
+
+	</body>
+</html>
